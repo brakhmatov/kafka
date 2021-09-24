@@ -25,7 +25,7 @@ public class SenderController {
 	@PostMapping("/sender")
 	public String senderSubmit(@ModelAttribute MessageTo message, Model model) {
 		model.addAttribute("message", message);
-		this.jmsTemplate.convertAndSend("DEV.QUEUE.1", message.toString());
+		this.jmsTemplate.convertAndSend("DEV.QUEUE.1", message.getJsonStr());
 		return "result-ibm";
 	}	
 }

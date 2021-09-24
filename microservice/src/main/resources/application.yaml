@@ -5,3 +5,17 @@ spring:
     name: microservice
   config:
     import: optional:configserver:http://localhost:8888/
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+
+queue.manager.name: QM1
+queue.manager.channel: DEV.ADMIN.SVRCONN
+queue.manager.connection: localhost(1414)
+queue.manager.username: admin
+queue.manager.password: passw0rd
+      
+    
